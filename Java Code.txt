@@ -1,0 +1,292 @@
+1. Sort Array
+package com.hexaware.sample;
+import java.util.Arrays;
+public class SortArray {
+
+	public static void main(String[] args) {
+		
+
+				int[] arr = { 23,12,45,67,90,23,54,67,8,1,14 };
+				System.out.println(" Array: ");
+				for (int num : arr) {
+					System.out.print(num + " ");
+				}
+				Arrays.sort(arr);
+				System.out.println("\n Sorted Array  ");
+				for (int num : arr) {
+					System.out.print(num + " ");
+				}
+			}
+		}
+
+2. Find element
+package com.hexaware.sample;
+
+public class FindValueArray {
+
+	
+		  public static void main(String[] args) {
+
+		    int[] num = {23,12,45,67,90,23,54,67,8,1,14};
+		    int toFind = 65;
+		    boolean found = false;
+
+		    for (int n : num) {
+		      if (n == toFind) {
+		        found = true;
+		        break;
+		      }
+		    }
+		    
+		    if(found)
+		      System.out.println(toFind + " Yes");
+		    else
+		      System.out.println(toFind + "  Not found");
+		  }
+		}
+
+3. Find Array Index
+
+package com.hexaware.sample;
+
+public class FindArrayIndex {
+
+	       public static int  findIndex (int[] my_array, int t) 
+	       {
+	        if (my_array == null)
+	        	return -1;
+	        int len = my_array.length;
+	        int i = 0;
+	        while (i < len) {
+	            if (my_array[i] == t) return i;
+	            else i=i+1;
+	        }
+	        return -1;
+	    }
+	    public static void main(String[] args) {
+	      int[] my_array = {23,12,45,67,90,23,54,67,8,1,14};
+	      System.out.println("Index position of 67 is: " + findIndex(my_array, 67));
+	      System.out.println("Index position of 1 is: " + findIndex(my_array, 1));
+	       }
+	}
+
+4. Insert into array
+package com.hexaware.sample;
+import java.util.Arrays;
+public class InsertIntoArray {
+	 
+	public static void main(String[] args) {
+
+	   int[] my_array = {23,12,45,67,90,23,54,67,8,1,14};
+
+	    
+	   
+	   int Index_position = 8;
+	   int newValue    = 69;
+
+	  System.out.println("Original Array : "+Arrays.toString(my_array));     
+	   
+	  for(int i=my_array.length-1; i > Index_position; i--){
+	    my_array[i] = my_array[i-1];
+	   }
+	   my_array[Index_position] = newValue;
+	   System.out.println("New Array: "+Arrays.toString(my_array));
+	 }
+	 }
+
+5. Find Common Elements
+
+package com.hexaware.sample;
+import java.util.Arrays;
+public class FindCommonArray {
+	public static void main(String[] args) 
+	    {
+	      int[] array1 = {23,12,45,67,90,23,54,67,8,1,14};
+	      int[] array2 = {43,32,45,97,90,23,54,7,8};
+	 
+	       System.out.println("Array1 : "+Arrays.toString(array1));
+	       System.out.println("Array2 : "+Arrays.toString(array2));
+	 
+	      
+	        for (int i = 0; i < array1.length; i++)
+	        {
+	            for (int j = 0; j < array2.length; j++)
+	            {
+	                if(array1[i] == (array2[j]))
+	                {
+	                 
+	                 System.out.println("Common element is : "+(array1[i]));
+	                 }
+	            }
+	        }
+	 
+	    }
+	}
+
+6. Find 3rd largest
+
+package com.hexaware.sample;
+
+public class ThirdLargestInArrayExample{  
+public static int getThirdLargest(int[] a, int total){  
+int temp;  
+for (int i = 0; i < total; i++)   
+        {  
+            for (int j = i + 1; j < total; j++)   
+            {  
+                if (a[i] > a[j])   
+                {  
+                    temp = a[i];  
+                    a[i] = a[j];  
+                    a[j] = temp;  
+                }  
+            }  
+        }  
+       return a[total-2];  
+}  
+public static void main(String args[]){  
+int a[]={23,12,45,90,23,54,67,8,1,14};   
+System.out.println("Third Largest: "+getThirdLargest(a,6));   
+}}  
+
+7. Find 3rd smallest
+package com.hexaware.sample;
+
+public class FindSmallestThird {
+	   public static int getThirdSmallest(int[] a) {
+	      int temp;
+	     
+	      for (int i = 0; i < a.length; i++) {
+	         for (int j = i + 1; j < a.length; j++) {
+	            if (a[i] > a[j]) {
+	               temp = a[i];
+	               a[i] = a[j];
+	               a[j] = temp;
+	            }
+	         }
+	      }
+	      
+	      return a[2];
+	   }
+	   public static void main(String args[]) {
+	      int a[] = { 23,12,45,90,23,54,67,8,1,14 };
+	      System.out.println("Third Smallest: " +getThirdSmallest(a));
+	   }
+	}
+
+8. Find pairs
+package com.hexaware.sample;
+
+public class FindPairs {
+	    public static void findPair(int[] nums, int target)
+	    {
+	        for (int i = 0; i < nums.length - 1; i++)
+	        {
+	            for (int j = i + 1; j < nums.length; j++)
+	            {
+	               
+	                if (nums[i] + nums[j] == target)
+	                {
+	                    System.out.printf("Pair found (%d, %d)", nums[i], nums[j]);
+	                    return;
+	                }
+	            }
+	        }
+	 
+	       
+	        System.out.println("Pair not found");
+	    }
+	 
+	    public static void main (String[] args)
+	    {
+	        int[] nums = { 23,12,45,90,23,54,67,8,1,14 };
+	        int target = 21;
+	 
+	        findPair(nums, target);
+	    }
+	}
+
+9. Common from 4 sorted array
+
+package com.hexaware.sample;
+
+import java.util.*;
+public class FindCommonElements4 {
+public static void main(String[] args) {
+	ArrayList<Integer> common = new ArrayList<Integer>();
+   int array1[] = {2, 4, 8};
+   int array2[] = {2, 3, 4, 8, 10, 16};
+   int array3[] = {2, 4, 8, 14, 40};
+   int array4[] = {6,9,7,2};
+	int x = 0, y = 0, z = 0 ,a =0;
+	while (x < array1.length && y < array2.length && z < array3.length && a<array4.length){
+		if (array1[x] == array2[y] && array2[y] == array3[z] && array3[z] == array4[a]){
+			common.add(array1[x]);
+			x++;
+			y++;
+			z++;
+			a++;
+		}
+		else if (array1[x] < array2[y])
+			x++;
+		else if (array2[y] < array3[z])
+			y++;
+		else if (array3[z] == array4[a])
+			z++;
+		else
+			a++;
+	}
+	System.out.println("Common elements from four sorted (in non-decreasing order ) arrays: ");
+System.out.println(common);
+}
+}
+
+
+10. Remove duplicate
+
+package com.hexaware.sample;
+
+public class RemoveDuplicate {
+
+	
+
+
+
+		public static int removeduplicates(int a[], int n)
+		{
+			if (n == 0 || n == 1) {
+				return n;
+			}
+
+		
+			int[] temp = new int[n];
+			int j = 0;
+
+			for (int i = 0; i < n - 1; i++) {
+				if (a[i] != a[i + 1]) {
+					temp[j++] = a[i];
+				}
+			}
+
+			temp[j++] = a[n - 1];
+
+			
+			for (int i = 0; i < j; i++) {
+				a[i] = temp[i];
+			}
+
+			return j;
+		}
+		public static void main(String[] args)
+		{
+			int a[] = { 23,12,45,67,90,23,54,67,8,1,14};
+			int n = a.length;
+
+			n = removeduplicates(a, n);
+
+			
+			for (int i = 0; i < n; i++)
+				System.out.print(a[i] + " ");
+		}
+	}
+
